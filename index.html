@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생일 축하 영어 배우기</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Gaegu:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* 아이들이 좋아할 만한 귀여운 글꼴을 적용합니다. */
+        body {
+            font-family: 'Gaegu', cursive;
+            font-weight: 700; /* 글자를 더 진하게 */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .font-dongle {
+            font-family: 'Dongle', sans-serif;
+        }
+        /* 카드에 부드러운 전환 효과를 줍니다. */
+        .sentence-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        /* 카드를 클릭(활성화)했을 때 시각적 피드백을 줍니다. */
+        .sentence-card:active {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* 촛불 모양을 만듭니다. */
+        .candle {
+            width: 20px;
+            height: 60px;
+            background: linear-gradient(to bottom, #fde047, #fca5a5);
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            margin: 0 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        /* 촛불의 심지를 만듭니다. */
+        .candle::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 10px;
+            background-color: #333;
+        }
+        /* 촛불의 불꽃을 만듭니다. */
+        .flame {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 20px;
+            background-color: #fbbf24;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flicker 1s infinite alternate;
+        }
+        /* 불꽃이 흔들리는 애니메이션 효과를 줍니다. */
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1); opacity: 1; }
+            50% { transform: translateX(-45%) scale(1.05); opacity: 0.9; }
+            100% { transform: translateX(-55%) scale(0.95); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-sky-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-6 md:p-8">
+        
+        <!-- 머리말 -->
+        <header class="text-center mb-8">
+            <h1 class="text-5xl md:text-6xl font-bold text-pink-500 font-dongle">🎂 생일 축하 영어! 🎂</h1>
+            <p class="text-gray-600 text-xl md:text-2xl mt-2">문장 카드를 눌러서 소리를 들어봐요!</p>
+        </header>
+
+        <!-- 영어 문장 및 비디오 섹션 -->
+        <main class="space-y-8">
+            <!-- HELLO (동영상 없음) -->
+            <div class="sentence-card bg-yellow-100 p-4 rounded-xl shadow-md cursor-pointer flex items-center space-x-4" data-audio-src="sound/hello.mp3">
+                <span class="text-5xl">👋</span>
+                <p class="text-4xl md:text-5xl font-bold text-yellow-800">HELLO</p>
+            </div>
+
+            <!-- 그룹 1: 케이크 먹기 -->
+            <div class="bg-gray-50 rounded-xl p-4 space-y-4">
+                <div class="aspect-video bg-black rounded-lg">
+                    <video controls class="w-full h-full rounded-lg">
+                        <source src="video/eat.mp4" type="video/mp4">
+                        브라우저가 비디오 태그를 지원하지 않습니다.
+                    </video>
+                </div>
+                <div class="sentence-card bg-pink-100 p-4 rounded-xl shadow-md cursor-pointer flex items-center space-x-4" data-audio-src="sound/eat.mp3">
+                    <span class="text-5xl">🍰</span>
+                    <p class="text-3xl md:text-4xl font-bold text-pink-800">I eat cake on my birthday</p>
+                </div>
+            </div>
+            
+            <!-- 그룹 2: 노래하기 -->
+            <div class="bg-gray-50 rounded-xl p-4 space-y-4">
+                <div class="aspect-video bg-black rounded-lg">
+                    <video controls class="w-full h-full rounded-lg">
+                        <source src="video/sing.mp4" type="video/mp4">
+                        브라우저가 비디오 태그를 지원하지 않습니다.
+                    </video>
+                </div>
+                <div class="sentence-card bg-blue-100 p-4 rounded-xl shadow-md cursor-pointer flex items-center space-x-4" data-audio-src="sound/sing.mp3">
+                    <span class="text-5xl">🎤</span>
+                    <p class="text-3xl md:text-4xl font-bold text-blue-800">I sing on my birthday</p>
+                </div>
+            </div>
+
+            <!-- 그룹 3: 케이크 촛불, 숫자 세기, 감사 인사 -->
+            <div class="bg-gray-50 rounded-xl p-4 space-y-4">
+                <div class="aspect-video bg-black rounded-lg">
+                    <video controls class="w-full h-full rounded-lg">
+                        <source src="video/candle.mp4" type="video/mp4">
+                        브라우저가 비디오 태그를 지원하지 않습니다.
+                    </video>
+                </div>
+                <div class="sentence-card bg-purple-100 p-4 rounded-xl shadow-md cursor-pointer" data-audio-src="sound/candle.mp3">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <span class="text-5xl">🎂</span>
+                        <p class="text-3xl md:text-4xl font-bold text-purple-800">my birthday cake has five candles on it</p>
+                    </div>
+                    <div class="bg-amber-800 p-4 rounded-b-xl relative mt-4">
+                        <div class="bg-orange-300 h-16 rounded-lg flex items-start justify-center pt-4">
+                            <div class="candle"><div class="flame"></div></div>
+                            <div class="candle"><div class="flame"></div></div>
+                            <div class="candle"><div class="flame"></div></div>
+                            <div class="candle"><div class="flame"></div></div>
+                            <div class="candle"><div class="flame"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sentence-card bg-green-100 p-4 rounded-xl shadow-md cursor-pointer flex items-center space-x-4" data-audio-src="sound/five.mp3">
+                    <span class="text-5xl">🖐️</span>
+                    <p class="text-4xl md:text-5xl font-bold text-green-800">one two three four five</p>
+                </div>
+                <div class="sentence-card bg-orange-100 p-4 rounded-xl shadow-md cursor-pointer flex items-center space-x-4" data-audio-src="sound/thankyou.mp3">
+                    <span class="text-5xl">🙏</span>
+                    <p class="text-4xl md:text-5xl font-bold text-orange-800">thank you</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 스크립트: 페이지 로딩 및 오디오 재생 처리 -->
+    <script>
+        window.addEventListener('load', function() {
+            // 페이지가 완전히 로드되면 부드럽게 표시
+            document.body.style.opacity = 1;
+
+            // 오디오 재생 기능 설정
+            const sentenceCards = document.querySelectorAll('.sentence-card[data-audio-src]');
+            
+            // 현재 재생 중인 오디오를 추적하기 위한 변수
+            let currentAudio = null;
+
+            sentenceCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const audioSrc = card.dataset.audioSrc;
+                    
+                    // 오디오 소스가 지정된 경우에만 재생
+                    if (audioSrc) {
+                        // 만약 다른 오디오가 재생 중이라면, 먼저 정지
+                        if(currentAudio) {
+                            currentAudio.pause();
+                            currentAudio.currentTime = 0;
+                        }
+
+                        // 새 오디오 객체를 만들고 재생
+                        const newAudio = new Audio(audioSrc);
+                        newAudio.play().catch(error => console.error("오디오 재생 오류:", error));
+                        
+                        // 현재 재생 중인 오디오로 설정
+                        currentAudio = newAudio;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
